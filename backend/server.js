@@ -90,6 +90,10 @@ c
     });
 });
 
+app.get("/", (req, res) => {
+    res.send("🌸 Bloomify Backend is Running Successfully!");
+});
+
 // Start server
 const PORT = process.env.PORT || 3000;
 
