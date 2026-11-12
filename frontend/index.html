@@ -90,6 +90,9 @@
                 <button onclick="addToCart('Pink Roses', 499)">
                     Add to Cart
                 </button>
+                <button onclick="deleteFlower(1)">Delete</button>
+
+                
             </div>
 
 
@@ -103,6 +106,8 @@
                 <button onclick="addToCart('Sunflowers', 399)">
                     Add to Cart
                 </button>
+
+                <button onclick="deleteFlower(2)">Delete</button>
             </div>
 
 
@@ -116,9 +121,42 @@
                 <button onclick="addToCart('Purple Flowers', 599)">
                     Add to Cart
                 </button>
+
+                <button onclick="deleteFlower(3)">Delete</button>
+                
             </div>
 
         </div>
+
+          <!-- Add New Flower Form -->
+<div class="add-flower-section">
+
+    <h2>Add a New Flower 🌸</h2>
+
+    <form id="addFlowerForm">
+
+        <input
+            type="text"
+            id="flowerName"
+            placeholder="Enter flower name"
+            required
+        >
+
+        <input
+            type="number"
+            id="flowerPrice"
+            placeholder="Enter flower price"
+            min="1"
+            required
+        >
+
+        <button type="submit">Add Flower</button>
+
+    </form>
+
+    <p id="add-message"></p>
+
+</div>
 
     </section>
 
