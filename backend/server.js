@@ -18,6 +18,10 @@ app.use(cors({
 // Middleware to read JSON
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("Bloomify Backend is Running Successfully! 🌸");
+});
+
 // Temporary product data
 let products = [
     { id: 1, name: "Pink Roses", price: 499 },
