@@ -1,4 +1,11 @@
 
+// Backend URL
+const API_BASE_URL =
+    ["localhost", "127.0.0.1"].includes(window.location.hostname)
+        ? "http://localhost:3000"
+        : "https://bloomify-backend-iqk0.onrender.com";
+
+
 // Cart counter
 let cartCount = 0;
 
@@ -31,10 +38,11 @@ async function deleteFlower(id) {
 
     try {
         const response = await fetch(
-            `http://localhost:3000/api/products/${id}`,
+             `${API_BASE_URL}/api/products/${id}`,
             {
-                method: "DELETE"
+               method: "DELETE"
             }
+
         );
 
         const result = await response.json();
@@ -63,7 +71,7 @@ addFlowerForm.addEventListener("submit", async function(event) {
     const price = Number(document.getElementById("flowerPrice").value);
 
     try {
-        const response = await fetch("http://localhost:3000/api/products", {
+        const response = await fetch(`${API_BASE_URL}/api/products`,  {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -96,7 +104,7 @@ addFlowerForm.addEventListener("submit", async function(event) {
 // Display flowers from backend
 async function loadFlowers() {
     try {
-        const response = await fetch("http://localhost:3000/api/products");
+        const response = await fetch(`${API_BASE_URL}/api/products`);
 
         if (!response.ok) {
             throw new Error("Could not load flowers");

@@ -9,7 +9,7 @@ app.use(cors({
     origin: [
         'http://127.0.0.1:5500',
         'http://localhost:5500',
-        'https://your-bloomify.vercel.app'
+        'https://bloomify-frontend.vercel.app'
     ],
     methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type']
@@ -78,7 +78,7 @@ app.delete('/api/products/:id', (req, res) => {
     const initialLength = products.length;
 
     products = products.filter(p => p.id !== id);
-c
+
     if (products.length === initialLength) {
         return res.status(404).json({
             message: "Product not found"
@@ -88,10 +88,6 @@ c
     res.json({
         message: "Product deleted successfully"
     });
-});
-
-app.get("/", (req, res) => {
-    res.send("🌸 Bloomify Backend is Running Successfully!");
 });
 
 // Start server
